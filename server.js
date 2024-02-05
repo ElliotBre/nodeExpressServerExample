@@ -1,18 +1,19 @@
 
 import express from 'express';
-import path from 'path'
-import {fileURLToPath} from 'url';
+import { initHttpServer } from './src/script/httpServer.js';
 import {dirname} from 'path';
+import {fileURLToPath} from 'url';
 
-const app = express();
+let app = express();
 const port = process.env.PORT || 8080;
-
-const __filename = fileURLToPath(import.meta.url);
+const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename);
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'html/index.html'));
-});
+app.use(express.static('public'));
+app = initHttpServer(port, app, __dirname);
 
-app.listen(port);
-console.log('Server started at http://localhost:' + port);
+
+
+
+
+
