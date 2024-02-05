@@ -8,14 +8,23 @@
         "path": "0.12.7",
         "url": "0.11.3",
         "ws": "8.16.0",
-        "prettier": "3.2.5",
-        "husky": "9.0.10",
-        "lint-staged": "15.2.2",
         "eslint":"8.56.0"
+    },
+    "devDependencies": {
+      "husky":"9.0.10",
+      "prettier":"3.2.5",
+      "lint-staged":"15.2.2"
     },
     "versions": "1.0.0",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "npx prettier --write ./src",
+        "lint": "eslint src --ext .js",
+        "lint:fix": "eslint src --ext .js --fix",
+        "start": "node server.js"
+    },
+    "engines": {
+      "node": "20.7.0"
     },
     "repository": {
         "type": "git",
@@ -51,16 +60,11 @@
       }
     },
     "lint-staged": {
-      "*.{js,jsx}": [
-        "prettier --write",
+      "src/**/*.js" : [
         "eslint --fix",
-        "git add"
-      ],
-      "*.{html,css,less,ejs}": [
-        "prettier --write",
-        "git add"
-      ]
-    },
+        "prettier --write"
+        ]
+      },
     "keywords": [],
     "author": "",
     "license": "ISC"
