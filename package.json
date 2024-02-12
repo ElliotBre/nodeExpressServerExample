@@ -59,6 +59,14 @@
         }
       },
     "lint-staged": {
+        "public/**/*": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "server/**/*": [
+            "eslint --fix",
+            "prettier --write"
+        ],
         "*.js": [
             "eslint --fix",
             "prettier --write"
