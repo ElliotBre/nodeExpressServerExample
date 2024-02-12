@@ -1,5 +1,5 @@
 import express from 'express'
-import initHttpServer from './src/script/httpServer.js'
+import initHttpServer from './server/script/httpServer.js'
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
