@@ -28,7 +28,8 @@
         "format": "npx prettier --write ./public ./server",
         "lint": "eslint public server --ext .js",
         "lint:fix": "eslint public server --ext .js --fix",
-        "start": "node server.js"
+        "start": "node server.js",
+        "prepare": "husky install"
     },
     "engines": {
         "node": "20.7.0"
@@ -52,6 +53,11 @@
             "no-unused-vars": 1
         }
     },
+    "husky": {
+        "hooks": {
+          "pre-commit": "lint-staged"
+        }
+      },
     "lint-staged": {
         "src/**/*.js": [
             "eslint --fix",
