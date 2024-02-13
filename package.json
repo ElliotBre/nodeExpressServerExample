@@ -28,7 +28,7 @@
         "format": "npx prettier --write ./public ./server",
         "lint": "eslint public server --ext .js",
         "lint:fix": "eslint public server --ext .js --fix",
-        "start": "node server.js",
+        "start": "node src/server/server.js",
         "prepare": "husky install"
     },
     "engines": {
