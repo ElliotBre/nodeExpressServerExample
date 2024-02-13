@@ -7,8 +7,8 @@ import { fileURLToPath } from 'url'
 
 let app = express()
 const port = process.env.PORT || 8080
-const _filename = fileURLToPath(import.meta.url)
-const _dirname = dirname(_filename)
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
-app.use(express.static(path.join(_dirname, "../public")))
-app = initHttpServer(port, app, _dirname)
+app.use(express.static(path.join(__dirname, "../public")))
+app = initHttpServer(port, app, __dirname)
